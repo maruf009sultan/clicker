@@ -1,0 +1,287 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* VOID FEAST - Darker, More Addictive Design System */
+
+@layer base {
+  :root {
+    /* Void Abyss Colors */
+    --background: 240 100% 1%;
+    --foreground: 0 0% 85%;
+    
+    /* Dark Energy Theme */
+    --cosmic-primary: 280 100% 45%;
+    --cosmic-secondary: 0 100% 40%;
+    --cosmic-accent: 320 100% 55%;
+    --cosmic-warning: 30 100% 50%;
+    --cosmic-success: 120 100% 25%;
+    
+    /* Addiction & Fear Colors */
+    --void-black: 240 100% 2%;
+    --blood-red: 0 100% 30%;
+    --soul-purple: 270 100% 35%;
+    --fear-yellow: 45 100% 40%;
+    --corruption-green: 120 100% 20%;
+    
+    /* Quantum Glow Effects */
+    --quantum-glow-primary: 270 91% 65%;
+    --quantum-glow-secondary: 195 100% 50%;
+    --quantum-glow-accent: 310 100% 70%;
+    
+    /* Reality Glitch Colors */
+    --glitch-red: 0 100% 60%;
+    --glitch-cyan: 180 100% 50%;
+    --glitch-purple: 270 100% 70%;
+    
+    /* Void Gradients */
+    --gradient-void: linear-gradient(135deg, hsl(240 100% 1%), hsl(240 100% 3%), hsl(270 80% 5%));
+    --gradient-corruption: linear-gradient(45deg, hsl(var(--blood-red)), hsl(var(--soul-purple)));
+    --gradient-despair: linear-gradient(180deg, hsl(var(--void-black)), hsl(var(--cosmic-primary) / 0.1));
+    --gradient-hunger: radial-gradient(circle, hsl(var(--blood-red) / 0.6), transparent 50%);
+    --gradient-obsession: conic-gradient(from 0deg, hsl(var(--soul-purple)), hsl(var(--blood-red)), hsl(var(--soul-purple)));
+    
+    /* Game UI Colors */
+    --card: 240 20% 8%;
+    --card-foreground: 280 100% 95%;
+
+    --popover: 240 20% 8%;
+    --popover-foreground: 280 100% 95%;
+
+    --primary: 270 91% 65%;
+    --primary-foreground: 228 39% 4%;
+
+    --secondary: 240 30% 12%;
+    --secondary-foreground: 280 100% 95%;
+
+    --muted: 240 30% 15%;
+    --muted-foreground: 240 10% 70%;
+
+    --accent: 310 100% 70%;
+    --accent-foreground: 228 39% 4%;
+
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 280 100% 95%;
+
+    --border: 240 30% 20%;
+    --input: 240 30% 15%;
+    --ring: 270 91% 65%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: var(--gradient-void);
+    min-height: 100vh;
+    overflow-x: hidden;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="none" stroke="%23ff0066" stroke-width="2"/><circle cx="10" cy="10" r="2" fill="%23ff0066"/></svg>') 10 10, auto;
+  }
+}
+
+/* Dark Addiction Effects and Animations */
+@layer utilities {
+  .void-glow {
+    box-shadow: 0 0 30px hsl(var(--soul-purple) / 0.8),
+                0 0 60px hsl(var(--blood-red) / 0.4),
+                0 0 100px hsl(var(--soul-purple) / 0.2);
+  }
+  
+  .blood-glow {
+    box-shadow: 0 0 25px hsl(var(--blood-red) / 0.9),
+                0 0 50px hsl(var(--blood-red) / 0.5),
+                inset 0 0 20px hsl(var(--blood-red) / 0.1);
+  }
+  
+  .corruption-glow {
+    box-shadow: 0 0 20px hsl(var(--corruption-green) / 0.7),
+                0 0 40px hsl(var(--corruption-green) / 0.4);
+  }
+  
+  .reality-corruption {
+    animation: corruption-glitch 0.4s ease-in-out;
+    filter: hue-rotate(180deg) contrast(1.5) saturate(2);
+  }
+  
+  .void-pulse {
+    animation: void-pulse 1.5s ease-in-out infinite;
+  }
+  
+  .soul-float {
+    animation: soul-float 4s ease-in-out infinite;
+  }
+  
+  .hunger-effect {
+    background: var(--gradient-hunger);
+    animation: hunger-throb 2s ease-in-out infinite;
+  }
+  
+  .obsession-spiral {
+    background: var(--gradient-obsession);
+    animation: obsession-spin 6s linear infinite;
+  }
+  
+  .addiction-shake {
+    animation: addiction-shake 0.5s ease-in-out;
+  }
+  
+  .withdrawal-flicker {
+    animation: withdrawal-flicker 0.2s ease-in-out infinite;
+  }
+  
+  .fear-tremor {
+    animation: fear-tremor 3s ease-in-out infinite;
+  }
+}
+
+@keyframes corruption-glitch {
+  0%, 100% { transform: translateX(0) skewX(0deg); filter: hue-rotate(0deg); }
+  10% { transform: translateX(-5px) skewX(-5deg); filter: hue-rotate(90deg); }
+  25% { transform: translateX(5px) skewX(5deg); filter: hue-rotate(180deg); }
+  40% { transform: translateX(-3px) skewX(3deg); filter: hue-rotate(270deg); }
+  60% { transform: translateX(3px) skewX(-3deg); filter: hue-rotate(360deg); }
+  80% { transform: translateX(-1px) skewX(1deg); filter: hue-rotate(45deg); }
+}
+
+@keyframes void-pulse {
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 0.9;
+    box-shadow: 0 0 30px hsl(var(--soul-purple) / 0.8);
+  }
+  50% { 
+    transform: scale(1.15);
+    opacity: 1;
+    box-shadow: 0 0 60px hsl(var(--blood-red) / 0.9);
+  }
+}
+
+@keyframes soul-float {
+  0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+  25% { transform: translateY(-15px) rotate(2deg) scale(1.05); }
+  50% { transform: translateY(-5px) rotate(-1deg) scale(0.95); }
+  75% { transform: translateY(10px) rotate(1deg) scale(1.02); }
+}
+
+@keyframes hunger-throb {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.3); opacity: 1; }
+}
+
+@keyframes obsession-spin {
+  0% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(90deg) scale(1.1); }
+  50% { transform: rotate(180deg) scale(0.9); }
+  75% { transform: rotate(270deg) scale(1.05); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes addiction-shake {
+  0%, 100% { transform: translateX(0); }
+  10% { transform: translateX(-8px) rotate(-1deg); }
+  20% { transform: translateX(8px) rotate(1deg); }
+  30% { transform: translateX(-6px) rotate(-0.5deg); }
+  40% { transform: translateX(6px) rotate(0.5deg); }
+  50% { transform: translateX(-4px); }
+  60% { transform: translateX(4px); }
+  70% { transform: translateX(-2px); }
+  80% { transform: translateX(2px); }
+  90% { transform: translateX(-1px); }
+}
+
+@keyframes withdrawal-flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes fear-tremor {
+  0%, 100% { transform: translateY(0); }
+  10% { transform: translateY(-1px); }
+  20% { transform: translateY(1px); }
+  30% { transform: translateY(-0.5px); }
+  40% { transform: translateY(0.5px); }
+  50% { transform: translateY(-0.2px); }
+  60% { transform: translateY(0.2px); }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.3; }
+}
+
+/* Cursor Trail Effect */
+.cursor-trail {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: hsl(var(--blood-red));
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  animation: cursor-fade 0.8s ease-out forwards;
+}
+
+@keyframes cursor-fade {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0); }
+}
